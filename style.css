@@ -13,6 +13,17 @@
     height:600px;
 }
 
+.pixelCanvas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  width: 1px;
+  height: 1px;
+}
+
 nav {
     padding-top: 50px;
     flex: 0 1 20%;
