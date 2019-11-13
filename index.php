@@ -38,7 +38,7 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php
               foreach($canvas as $pixel){ ?>
                 <!-- Not sure if attributes are the best way to set x and y -->
-                <div class="pixel" x="<?=$pixel['x'];?>" y="<?=$pixel['y'];?>" style="background-color: <?=$pixel['color'];?>"></div>
+                <div class="pixel" db_id="<?=$pixel['id'];?>" style="background-color: <?=$pixel['color'];?>"></div>
               <?php }
             ?>
             </div>
