@@ -8,16 +8,8 @@ $canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels`");
 $result = $canvas_select_stmt->execute();
 
 // Can probably change to PDO::FETCH_COLUMN or something
-$raw_canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
+$canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
 // $pdo->prepare("SELECT * FROM `pixels` WHERE `current`=1 ")
-
-$canvas = array(array());
-
-// Since pixels will be in 1D array, we need to convert to x,y
-foreach($raw_canvas as $pixel)
-{
-  $canvas[$pixel['y']][$pixel['x']] = $pixel['color'];
-}
 
 
 ?>
