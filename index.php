@@ -44,10 +44,13 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </main>
 
-        <aside>Pick your color!
-            <input id="colorChoice" type="color" value="#000000" />
-            <input type="submit" />
-            <p>Instructions:</p>
+        <aside>
+			<form>
+			<label>Pick your color!</label>
+				<input id="colorChoice" type="color" value="#000000" />
+				<input type="submit" />
+            </form>
+			<p>Instructions:</p>
             <ol>
                 <li>Click the color box</li>
                 <li>Pick your desired color</li>
