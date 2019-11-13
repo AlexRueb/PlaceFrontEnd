@@ -19,8 +19,9 @@
   grid-template-columns: repeat(10, 10px [col-start]);
   grid-template-rows: repeat(10, 10px [row-start]);
   grid-gap: 0px;
-  background-color: #fff;
+  background: lightsteelblue;
   padding: 0;
+  margin: auto;
 }
 
 .pixel {
