@@ -9,7 +9,7 @@ $db_user = 'root';
 // Get current canvas
 $pdo = new PDO('mysql:host=localhost;dbname=place', $db_user, "mysql");
 
-$canvas_size = 10;
+$canvas_size = 100;
 
 $pixel_insert_stmt = $pdo->prepare("INSERT INTO `pixels` (`color`) VALUES (:color)");
 

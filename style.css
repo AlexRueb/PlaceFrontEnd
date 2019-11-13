@@ -14,12 +14,20 @@
 }
 
 .pixelCanvas {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 10px [col-start]);
+  grid-template-rows: repeat(10, 10px [row-start]);
+  grid-gap: 0px;
+  background-color: #fff;
+  padding: 0;
 }
 
 .pixel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
   width: 10px;
   height: 10px;
 }
