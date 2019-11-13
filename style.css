@@ -8,20 +8,23 @@
 
 #container{
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    flex-direction: row;
     height:600px;
 }
 
+.pixelCanvasContainer {
+  margin: 0 auto;
+  align-self: center;
+}
+
 .pixelCanvas {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(10, 10px [col-start]);
   grid-template-rows: repeat(10, 10px [row-start]);
+  grid-template-columns: repeat(10, 10px [col-start]);
   grid-gap: 0px;
+
   background: lightsteelblue;
-  padding: 0;
-  margin: auto;
 }
 
 .pixel {
@@ -40,6 +43,7 @@ nav {
     font-size: 18pt;
 }
 main {
+    margin: auto;
     flex: 0 1 60%;
     background: lightsteelblue;
 }
