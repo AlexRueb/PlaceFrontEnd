@@ -1,6 +1,9 @@
 <?php
+//include_once("config.php");
+$db_user = 'root';
 
 // Get current canvas
+$pdo = new PDO('mysql:host=localhost;dbname=place', $db_user, "mysql");
 $canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels`");
 $result = $canvas_select_stmt->execute();
 
