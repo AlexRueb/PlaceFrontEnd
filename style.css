@@ -1,0 +1,40 @@
+﻿body {
+    width: 95%;
+    margin: 20px auto;
+    background: silver;
+    text-align:center;
+    font-size:24pt;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height:600px;
+}
+
+nav {
+    padding-top: 50px;
+    flex: 0 1 20%;
+    background: darkseagreen;
+    font-size: 18pt;
+}
+main {
+    flex: 0 1 60%;
+    background: lightsteelblue;
+}
+aside {
+    flex: 0 1 20%;
+    background: gray;
+    font-size: 18pt;
+    padding-right: 5px;
+    padding-top:50px;
+}
+footer {
+    background: lemonchiffon;
+    line-height: 50px;
+}
+
+ol{
+    font-size:16pt;
+}
