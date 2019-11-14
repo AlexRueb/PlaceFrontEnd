@@ -1,41 +1,32 @@
-//I'm not sure if we would do the serverside calls here or in a php file. 
-window.addEventListener("DOMContentLoaded", domLoaded);
+function updateCanvas(data){
 
-let currentStatus = {
-    "rows": 100,
-    "columns": 100,
-    
 }
 
-let choice = "white";
+function handlePixel(e){
+  e.preventDefault();
+  e.stopPropagation();
+  e.stopImmediatePropagation();
 
-//Event handler for when the table is clicked
-function tableClicked(e) {
-    //If is a colorable pixel
-    if () {
-        const pixel = e.target;
+  var color;
+  color = $("#colorChoice").val().substr(1);
 
-        const row = pixel.rowIndex;
-        const column = pixel.columnIndex;
-
-        clickPixel(row, column);
+  $.post({
+    url: "pixel.php?a=update_pixel",
+    data: {
+      id: $(e.target).attr("db_id"),
+      color: color
+    },
+    dataType: 'json'
+  }).done(function(data){
+    if(data.error){
+      alert("Error: Failed to update pixel");
+    } else {
+      alert("Successfully updated pixel");
     }
+  });
+  location.reload();
 }
 
-//Called by tableClicked when a pixel is clicked and after it finds the indices
-function clickPixel(row, column) {
-    //Change the pixels color and send data to server
-}
-
-//Called when DOM is loaded, adds click event listeners to grid and loads the colors from database(?)
-function domLoaded() {
-    const choiceClicked = document.getElementById("colorChoice");
-    choiceClicked.addEventListener("input", updateColor);
-    choiceClicked.addEventListener("change", updateColor);
-}
-
-function updateColor(event) {
-    document.querySelectorAll("p").forEach(function (p) {
-        p.style.color = event.target.value;
-    })
-}
+$(function(){
+  $(".pixel").click(handlePixel);
+});
