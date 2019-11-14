@@ -44,7 +44,6 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
           <main>
               <div class="pixelCanvasContainer">
                 <div class="pixelCanvas">
-                <!-- TODO: Create a FlexBox that wraps after every x pixels -->
                 <?php
                   foreach($canvas as $pixel){ ?>
                     <!-- Not sure if attributes are the best way to set x and y -->

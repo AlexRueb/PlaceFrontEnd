@@ -7,11 +7,16 @@ function handlePixel(e){
   e.stopPropagation();
   e.stopImmediatePropagation();
 
+  var color;
+
+  color = $("#colorChoice").val().substr(1);
+
+
   $.post({
     url: "pixel.php?a=update_pixel",
     data: {
       id: $(e.target).attr("db_id"),
-      color: $(e.target).attr("color")
+      color: color
     },
     dataType: 'json'
   }).done(function(data){
