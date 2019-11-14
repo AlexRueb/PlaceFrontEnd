@@ -20,8 +20,8 @@
 
 .pixelCanvas {
   display: grid;
-  grid-template-rows: repeat(10, 10px [row-start]);
-  grid-template-columns: repeat(10, 10px [col-start]);
+  grid-template-rows: repeat(100, 10px [row-start]);
+  grid-template-columns: repeat(100, 10px [col-start]);
   grid-gap: 0px;
 
   background: lightsteelblue;

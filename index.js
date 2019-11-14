@@ -8,9 +8,7 @@ function handlePixel(e){
   e.stopImmediatePropagation();
 
   var color;
-
   color = $("#colorChoice").val().substr(1);
-
 
   $.post({
     url: "pixel.php?a=update_pixel",
@@ -26,6 +24,7 @@ function handlePixel(e){
       alert("Successfully updated pixel");
     }
   });
+  location.reload();
 }
 
 $(function(){
