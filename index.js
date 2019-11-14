@@ -35,7 +35,7 @@ function handlePixel(e){
 }
 
 $(function(){
-  // Update canvas every 10 sec
-  setTimeout(updateCanvas, 10000);
+  // Update canvas every 1 sec
+  setInterval(updateCanvas, 1000);
   $(".pixel").click(handlePixel);
 });
