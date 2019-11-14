@@ -36,11 +36,13 @@
 .pixel {
   margin: 0;
   padding: 0;
-  border: 0;
 
   width: auto;
   height: auto;
   cursor: pointer;
+}
+.pixel:hover{
+  border: 1px solid grey;
 }
 
 nav {

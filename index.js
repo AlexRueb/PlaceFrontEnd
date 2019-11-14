@@ -4,12 +4,10 @@ function updateCanvas(){
     url: "pixel.php?a=get_canvas",
     dataType: 'json'
   }).done(function(data){
-    var i = 0;
     $(".pixel").each(function(index){
       // Set each pixels color to new data
-      $(this).attr('color', data.canvas[i].color);
-      $(this).css('background-color', "#"+data.canvas[i].color);
-      i++;
+      $(this).attr('color', data.canvas[index].color);
+      $(this).css('background-color', "#"+data.canvas[index].color);
     });
   });
 }
@@ -32,15 +30,12 @@ function handlePixel(e){
   }).done(
     function(data){
       updateCanvas();
-    //   if(data.error){
-    //     alert("Error: Failed to update pixel");
-    //   } else {
-    //     alert("Successfully updated pixel");
-    //   }
     }
   );
 }
 
 $(function(){
+  // Update canvas every 10 sec
+  setTimeout(updateCanvas, 10000);
   $(".pixel").click(handlePixel);
 });
