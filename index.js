@@ -1,5 +1,17 @@
-function updateCanvas(data){
-
+function updateCanvas(){
+  //Update each pixel in canvas with new DB info
+  $.get({
+    url: "pixel.php?a=get_canvas",
+    dataType: 'json'
+  }).done(function(data){
+    var i = 0;
+    $(".pixel").each(function(index){
+      // Set each pixels color to new data
+      $(this).attr('color', data.canvas[i].color);
+      $(this).css('background-color', "#"+data.canvas[i].color);
+      i++;
+    });
+  });
 }
 
 function handlePixel(e){
@@ -17,14 +29,16 @@ function handlePixel(e){
       color: color
     },
     dataType: 'json'
-  }).done(function(data){
-    if(data.error){
-      alert("Error: Failed to update pixel");
-    } else {
-      alert("Successfully updated pixel");
+  }).done(
+    function(data){
+      updateCanvas();
+    //   if(data.error){
+    //     alert("Error: Failed to update pixel");
+    //   } else {
+    //     alert("Successfully updated pixel");
+    //   }
     }
-  });
-  location.reload();
+  );
 }
 
 $(function(){
