@@ -1,41 +1,41 @@
-//I'm not sure if we would do the serverside calls here or in a php file. 
-window.addEventListener("DOMContentLoaded", domLoaded);
-
-let currentStatus = {
-    "rows": 100,
-    "columns": 100,
-    
+function updateCanvas(){
+  //Update each pixel in canvas with new DB info
+  $.get({
+    url: "pixel.php?a=get_canvas",
+    dataType: 'json'
+  }).done(function(data){
+    $(".pixel").each(function(index){
+      // Set each pixels color to new data
+      $(this).attr('color', data.canvas[index].color);
+      $(this).css('background-color', "#"+data.canvas[index].color);
+    });
+  });
 }
 
-let choice = "white";
+function handlePixel(e){
+  e.preventDefault();
+  e.stopPropagation();
+  e.stopImmediatePropagation();
 
-//Event handler for when the table is clicked
-function tableClicked(e) {
-    //If is a colorable pixel
-    if () {
-        const pixel = e.target;
+  var color;
+  color = $("#colorChoice").val().substr(1);
 
-        const row = pixel.rowIndex;
-        const column = pixel.columnIndex;
-
-        clickPixel(row, column);
+  $.post({
+    url: "pixel.php?a=update_pixel",
+    data: {
+      id: $(e.target).attr("db_id"),
+      color: color
+    },
+    dataType: 'json'
+  }).done(
+    function(data){
+      updateCanvas();
     }
+  );
 }
 
-//Called by tableClicked when a pixel is clicked and after it finds the indices
-function clickPixel(row, column) {
-    //Change the pixels color and send data to server
-}
-
-//Called when DOM is loaded, adds click event listeners to grid and loads the colors from database(?)
-function domLoaded() {
-    const choiceClicked = document.getElementById("colorChoice");
-    choiceClicked.addEventListener("input", updateColor);
-    choiceClicked.addEventListener("change", updateColor);
-}
-
-function updateColor(event) {
-    document.querySelectorAll("p").forEach(function (p) {
-        p.style.color = event.target.value;
-    })
-}
+$(function(){
+  // Update canvas every 1 sec
+  setInterval(updateCanvas, 1000);
+  $(".pixel").click(handlePixel);
+});
