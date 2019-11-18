@@ -36,8 +36,8 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
       <div id="container">
           <nav>Nav
           <ul>
-              <li>About Us</li>
-              <li>History</li>
+              <li><a href = "aboutus.html">About Us</a></li>
+              <li><a href = "history.html">History</a></li>
           </ul>
           </nav>
 

@@ -1,0 +1,21 @@
+﻿body{
+    background:silver;
+}
+#container {
+    display: flex;
+}
+nav{
+    flex: 0 1 10%;
+    font-size: 18pt;
+}
+main{
+    flex:0 1 90%;
+}
+
+#members{
+    flex-direction:row;
+}
+
+p {
+    font-size: 24pt;
+}
