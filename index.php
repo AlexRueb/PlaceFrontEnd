@@ -45,10 +45,11 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
               <div class="pixelCanvasContainer">
                 <div class="pixelCanvas">
                 <?php
-                  foreach($canvas as $pixel){ ?>
-                    <!-- Not sure if attributes are the best way to set x and y -->
-                    <div class="pixel" x="<?=$pixel['x'];?>" y="<?=$pixel['y'];?>" color="<?=$pixel['color'];?>" style="background-color: <?=$pixel['color'];?>"></div>
-                  <?php }
+                  $rendered_canvas = "";
+                  foreach($canvas as $pixel){
+                    $rendered_canvas .= "<div class='pixel' x='" . $pixel['x'] . "' y='" . $pixel['y'] . "' color='" . $pixel['color'] . "' style='background-color: ".$pixel['color']."'></div>";
+                  }
+                  echo $rendered_canvas;
                 ?>
                 </div>
               </div>
@@ -65,7 +66,6 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
             </ol>
           </aside>
         </div>
-        <footer>Footer</footer>
   </body>
 </html>
 <?php
