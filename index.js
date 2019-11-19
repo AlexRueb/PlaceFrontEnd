@@ -59,6 +59,8 @@ function handlePixel(e){
 
 $(function(){
   // Update canvas every 1 sec
+  $(".loading_spinner").addClass("fadeOut slow").css("display", "none");
+  $(".pixelCanvas").css("display", "grid");
   setInterval(updateCanvas, 5000);
   $(".pixel").click(handlePixel);
 });
