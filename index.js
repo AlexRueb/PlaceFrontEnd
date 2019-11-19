@@ -58,6 +58,6 @@ function handlePixel(e){
 
 $(function(){
   // Update canvas every 1 sec
-  setInterval(updateCanvas, 15000);
+  setInterval(updateCanvas, 5000);
   $(".pixel").click(handlePixel);
 });
