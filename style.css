@@ -13,6 +13,7 @@ header span {
 
 header ul li {
   display: inline;
+  padding: 1em;
 }
 
 header ul li a {
@@ -85,6 +86,7 @@ body {
 }
 
 nav {
+    min-width: 200px;
     text-align: center;
     height: inherit;
     font-size: 12pt;
