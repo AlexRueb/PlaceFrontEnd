@@ -1,14 +1,19 @@
+var last_update = Math.floor(Date.now() / 1000);
+
 function updateCanvas(){
   //Update each pixel in canvas with new DB info
   $.get({
-    url: "pixel.php?a=get_canvas",
+    url: "pixel.php?a=get_canvas&last_update="+last_update,
     dataType: 'json'
   }).done(function(data){
-    $(".pixel").each(function(index){
-      // Set each pixels color to new data
-      $(this).attr('color', data.canvas[index].color);
-      $(this).css('background-color', "#"+data.canvas[index].color);
-    });
+    last_update = Math.floor(Date.now() / 1000);
+    if(data.canvas.length > 0)
+    {
+      // alert(JSON.stringify(data.canvas));
+      jQuery.each(data.canvas, function(k, v){
+        $(".pixel[x="+v['x']+"][y="+v['y']+"]").attr('color', v['color']).css('background-color', "#"+v['color']);
+      });
+    }
   });
 }
 
@@ -19,19 +24,31 @@ function handlePixel(e){
 
   var color;
   color = $("#colorChoice").val().substr(1);
-
   $.post({
     url: "pixel.php?a=update_pixel",
     data: {
-      id: $(e.target).attr("db_id"),
+      x: $(e.target).attr("x"),
+      y: $(e.target).attr("y"),
+      last_update: Math.floor(Date.now() / 1000),
       color: color
     },
     dataType: 'json'
-  }).done(updateCanvas);
+  }).done(function(data){
+      if(data.error == 1)
+      {
+        alert("Error: "+data.msg);
+        updateCanvas();
+      }
+      else
+      {
+        updateCanvas();
+      }
+    }
+  );
 }
 
 $(function(){
   // Update canvas every 1 sec
-  setInterval(updateCanvas, 1000);
+  setInterval(updateCanvas, 15000);
   $(".pixel").click(handlePixel);
 });

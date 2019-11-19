@@ -1,7 +1,7 @@
 <?php
 include_once("config.php");
 global $pdo;
-$canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels`");
+$canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels_new`");
 $result = $canvas_select_stmt->execute();
 
 // Can probably change to PDO::FETCH_COLUMN or something
@@ -47,7 +47,7 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                   foreach($canvas as $pixel){ ?>
                     <!-- Not sure if attributes are the best way to set x and y -->
-                    <div class="pixel" db_id="<?=$pixel['id'];?>" color="<?=$pixel['color'];?>" style="background-color: <?=$pixel['color'];?>"></div>
+                    <div class="pixel" x="<?=$pixel['x'];?>" y="<?=$pixel['y'];?>" color="<?=$pixel['color'];?>" style="background-color: <?=$pixel['color'];?>"></div>
                   <?php }
                 ?>
                 </div>
