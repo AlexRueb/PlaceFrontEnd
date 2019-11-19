@@ -32,13 +32,23 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
   </head>
 
   <body>
-      <header>The Place</header>
+      <header>
+        <ul>
+            <span style="margin-right: 1em;">The Place&nbsp;&nbsp;//</span>
+            <li><a href = "aboutus.html">About Us</a></li>
+            <li><a href = "history.html">History</a></li>
+        </ul>
+      </header>
       <div id="container">
-          <nav>Nav
-          <ul>
-              <li><a href = "aboutus.html">About Us</a></li>
-              <li><a href = "history.html">History</a></li>
-          </ul>
+          <nav>
+            <label>Pick your color!</label><br>
+            <input id="colorChoice" type="color" value="#000000" />
+            <p>Instructions:</p>
+            <ol>
+                <li>Click the color box</li>
+                <li>Pick your desired color</li>
+                <li>Click any pixel in the grid to instantly change it to your color!</li>
+            </ol>
           </nav>
 
           <main>
@@ -54,17 +64,6 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
               </div>
           </main>
-
-          <aside>
-            <label>Pick your color!</label><br>
-            <input id="colorChoice" type="color" value="#000000" />
-            <p>Instructions:</p>
-            <ol>
-                <li>Click the color box</li>
-                <li>Pick your desired color</li>
-                <li>Click any pixel in the grid to instantly change it to your color!</li>
-            </ol>
-          </aside>
         </div>
   </body>
 </html>
