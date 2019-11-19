@@ -27,11 +27,7 @@ function handlePixel(e){
       color: color
     },
     dataType: 'json'
-  }).done(
-    function(data){
-      updateCanvas();
-    }
-  );
+  }).done(updateCanvas);
 }
 
 $(function(){
