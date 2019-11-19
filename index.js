@@ -1,4 +1,5 @@
 var last_update = Math.floor(Date.now() / 1000);
+var last_pixel = 0;
 
 function updateCanvas(){
   //Update each pixel in canvas with new DB info
@@ -22,29 +23,37 @@ function handlePixel(e){
   e.stopPropagation();
   e.stopImmediatePropagation();
 
-  var color;
-  color = $("#colorChoice").val().substr(1);
-  $.post({
-    url: "pixel.php?a=update_pixel",
-    data: {
-      x: $(e.target).attr("x"),
-      y: $(e.target).attr("y"),
-      last_update: Math.floor(Date.now() / 1000),
-      color: color
-    },
-    dataType: 'json'
-  }).done(function(data){
-      if(data.error == 1)
-      {
-        alert("Error: "+data.msg);
-        updateCanvas();
+  if(Math.floor(Date.now() / 1000) > (last_pixel + 10) || last_pixel == 0)
+  {
+    var color;
+    color = $("#colorChoice").val().substr(1);
+    $.post({
+      url: "pixel.php?a=update_pixel",
+      data: {
+        x: $(e.target).attr("x"),
+        y: $(e.target).attr("y"),
+        last_update: Math.floor(Date.now() / 1000),
+        color: color
+      },
+      dataType: 'json'
+    }).done(function(data){
+        if(data.error == 1)
+        {
+          alert("Error: "+data.msg);
+          updateCanvas();
+        }
+        else
+        {
+          last_pixel = Math.floor(Date.now() / 1000);
+          updateCanvas();
+        }
       }
-      else
-      {
-        updateCanvas();
-      }
-    }
-  );
+    );
+  }
+  else
+  {
+    alert("Error: you must wait 10 seconds to place another pixel");
+  }
 }
 
 $(function(){
