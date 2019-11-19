@@ -25,6 +25,12 @@ header ul li a:hover {
   text-decoration: none;
 }
 
+@media screen and (max-width: 800px) {
+  header ul li {
+    display: block;
+  }
+}
+
 html {
   background-color: black;
 }
@@ -92,7 +98,7 @@ nav {
     font-size: 12pt;
     padding-top: 50px;
     flex: 0 1 10%;
-    background-color: black;
+    background-color: #101010;
     color: white;
     border-right: 1px solid white;
     padding: 1em;

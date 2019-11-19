@@ -12,6 +12,7 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
+      <link rel="icon" href="http://simpleicon.com/wp-content/uploads/rocket.png">
       <meta charset="UTF-8">
       <title>Place</title>
       <link href="style.css" rel="stylesheet">
@@ -46,6 +47,7 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
             <label>Pick your color!</label><br>
             <input id="colorChoice" type="color" value="#3333FF" />
             <p>Instructions:</p>
+            <p style="color: purple">**You are only allowed to place one pixel every 10 seconds!**</p>
             <ol>
                 <li>Click the color box</li>
                 <li>Pick your desired color</li>
