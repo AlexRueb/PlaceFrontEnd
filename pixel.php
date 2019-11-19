@@ -7,7 +7,7 @@ if($_GET['a'] == 'update_pixel'){
   $y = $_POST['y'];
   $last_update = $_POST['last_update'];
 
-  $pixel_update_stmt = $pdo->prepare("UPDATE `pixels_new` SET `color`=:color, `last_update`=:last_update WHERE `x`=:x_val AND `y`=:y_val");
+  $pixel_update_stmt = $pdo->prepare("UPDATE `pixels` SET `color`=:color, `last_update`=:last_update WHERE `x`=:x_val AND `y`=:y_val");
   $result = $pixel_update_stmt->execute(array('color'=>$color, 'x_val'=>$x, 'y_val'=>$y, 'last_update'=>$last_update));
   if(!$result)
   {
@@ -20,7 +20,7 @@ if($_GET['a'] == 'update_pixel'){
 }
 elseif($_GET['a'] == 'get_canvas'){
   // Get all pixels that have been updated since last canvas update
-  $canvas_get_stmt = $pdo->prepare("SELECT * FROM `pixels_new` WHERE last_update > :last_update ORDER BY x, y");
+  $canvas_get_stmt = $pdo->prepare("SELECT * FROM `pixels` WHERE last_update > :last_update ORDER BY x, y");
   $result = $canvas_get_stmt->execute(array('last_update'=>$_GET['last_update']));
   $canvas = $canvas_get_stmt->fetchAll(PDO::FETCH_ASSOC);
   if(!$result){

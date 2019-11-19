@@ -1,7 +1,7 @@
 <?php
 include_once("config.php");
 global $pdo;
-$canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels_new`");
+$canvas_select_stmt = $pdo->prepare("SELECT * FROM `pixels`");
 $result = $canvas_select_stmt->execute();
 
 // Can probably change to PDO::FETCH_COLUMN or something
