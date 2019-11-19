@@ -11,13 +11,16 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    height: 100%;
     width:auto;
+    height: auto;
 }
 
 .pixelCanvasContainer {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5%;
 }
 
 .pixelCanvas {
@@ -27,10 +30,6 @@
     grid-template-rows: repeat(100, 1% [row-start]);
     grid-template-columns: repeat(100, 1% [col-start]);
     grid-gap: 0px;
-    justify-content: center;
-    align-self: center;
-    border: 10px solid black;
-    border-radius: 5px;
     width:800px;
     height:800px;
 }
@@ -52,6 +51,8 @@ nav {
     flex: 0 1 10%;
     background: darkseagreen;
     font-size: 18pt;
+    height: inherit;
+    padding-bottom: 5%;
 }
 main {
     margin: auto;
@@ -64,7 +65,9 @@ aside {
     font-size: 18pt;
     padding-right: 5px;
     padding-top:50px;
+    padding-bottom: 5%;
     text-align:center;
+    height: inherit;
 }
 footer {
     background: lemonchiffon;
