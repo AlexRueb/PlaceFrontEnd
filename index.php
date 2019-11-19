@@ -37,8 +37,8 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
       <header>
         <ul>
             <span class="animated fadeIn slow" style="margin-right: 1em;">The Place</span>
-            <li><a href = "aboutus.html">About Us</a></li>
-            <li><a href = "history.html">History</a></li>
+            <li><a href = "aboutus.html"># About Us</a></li>
+            <li><a href = "history.html"># History</a></li>
         </ul>
       </header>
       <div id="container">
@@ -55,10 +55,10 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
 
           <main>
               <div class="pixelCanvasContainer">
-                <div class="loading_spinner">
+                <div class="loading_spinner animated">
                   <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 </div>
-                <div class="pixelCanvas" style="display: none">
+                <div class="pixelCanvas">
                 <?php
                   $rendered_canvas = "";
                   foreach($canvas as $pixel){

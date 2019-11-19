@@ -58,9 +58,11 @@ function handlePixel(e){
 }
 
 $(function(){
+  // On load, hide loading spinner and show pixel canvas
+  $(".loading_spinner").addClass("slideOutDown").css("display", "none");
+  $(".pixelCanvas").addClass("animated fadeIn slow");
+
   // Update canvas every 1 sec
-  $(".loading_spinner").addClass("fadeOut slow").css("display", "none");
-  $(".pixelCanvas").css("display", "grid");
   setInterval(updateCanvas, 5000);
   $(".pixel").click(handlePixel);
 });

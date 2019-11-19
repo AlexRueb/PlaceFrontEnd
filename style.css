@@ -57,6 +57,7 @@ body {
 
 .pixelCanvas {
     margin: 0 auto;
+    visibility: hidden;
     margin-top: 1%;
     display: grid;
     grid-template-rows: repeat(100, 1% [row-start]);
@@ -65,6 +66,10 @@ body {
     width:800px;
     height:800px;
     border: 1px solid white;
+}
+
+.animated{
+  visibility: visible !important;
 }
 
 .pixel {
