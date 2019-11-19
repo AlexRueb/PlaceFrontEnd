@@ -8,7 +8,7 @@
     - last_update [type INT(11)]
 
 ## Table: pixel_archive
-    - id [type INT(11)]
+    - id [type INT(11)](PRIMARY KEY)
     - x [type INT(6)]
     - y [type INT(6)]
     - color [type VARCHAR(6)]
