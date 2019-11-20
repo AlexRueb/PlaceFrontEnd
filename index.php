@@ -64,7 +64,7 @@ $canvas = $canvas_select_stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                   $rendered_canvas = "";
                   foreach($canvas as $pixel){
-                    $rendered_canvas .= "<div class='pixel' x='" . $pixel['x'] . "' y='" . $pixel['y'] . "' color='" . $pixel['color'] . "' style='background-color: ".$pixel['color']."'></div>";
+                    $rendered_canvas .= "<div class='pixel' x='" . $pixel['x'] . "' y='" . $pixel['y'] . "' color='#" . $pixel['color'] . "' style='background-color: ".$pixel['color']."'></div>";
                   }
                   echo $rendered_canvas;
                 ?>

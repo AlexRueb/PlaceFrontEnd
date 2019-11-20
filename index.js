@@ -12,7 +12,7 @@ function updateCanvas(){
     {
       // alert(JSON.stringify(data.canvas));
       jQuery.each(data.canvas, function(k, v){
-        $(".pixel[x="+v['x']+"][y="+v['y']+"]").attr('color', v['color']).css('background-color', "#"+v['color']);
+        $(".pixel[x="+v['x']+"][y="+v['y']+"]").attr('color', v['color']).css('background-color', v['color']);
       });
     }
   });
@@ -59,14 +59,18 @@ function handlePixel(e){
   }
 }
 
+const inv = (hex) => '#' + hex.match(/[a-f0-9]{2}/ig).map(e => (255 - parseInt(e, 16) | 0).toString(16).replace(/^([a-f0-9])$/, '0$1')).join('');
+
 $(function(){
   $(".pixel").hover(function(e){
       // On pixel hoverIn, change color to selected color
-      $(this).css("background-color", $("#colorChoice").val());
+      // On hover, set color to inverted color
+      // $(this).css("background-color", $("#colorChoice").val());
+      $(this).css("border", "2px solid "+inv($(this).attr("color")));
     },
     function(e){
       // On pixel hoverOut, change color back to previous color
-      $(this).css("background-color", "#"+$(this).attr('color'));
+      $(this).css("border", "none");
     }
   );
 
