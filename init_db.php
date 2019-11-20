@@ -6,10 +6,11 @@ function random_color() {
 
 set_time_limit(120);
 
-$db_user = 'root';
+$db_user = 'user58';
+$db_pass = '58qktp';
 
 // Get current canvas
-$pdo = new PDO('mysql:host=localhost;dbname=place', $db_user, "mysql");
+$pdo = new PDO('mysql:host=localhost;dbname=db58', $db_user, $db_pass);
 
 // Corresponds to length of one side of canvas
 $canvas_size = 100;
