@@ -60,6 +60,16 @@ function handlePixel(e){
 }
 
 $(function(){
+  $(".pixel").hover(function(e){
+      // On pixel hoverIn, change color to selected color
+      $(this).css("background-color", $("#colorChoice").val());
+    },
+    function(e){
+      // On pixel hoverOut, change color back to previous color
+      $(this).css("background-color", "#"+$(this).attr('color'));
+    }
+  );
+
   // On load, hide loading spinner and show pixel canvas
   $(".loading_spinner").addClass("slideOutDown").css("display", "none");
   $(".pixelCanvas").addClass("animated fadeIn slow");

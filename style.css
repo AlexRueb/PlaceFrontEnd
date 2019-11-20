@@ -92,10 +92,9 @@ body {
 
   width: auto;
   height: auto;
-  cursor: pointer;
+  cursor: none;
 }
 .pixel:hover{
-  border: 2px solid white;
 }
 
 nav {
