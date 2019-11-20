@@ -23,6 +23,8 @@ function handlePixel(e){
   e.stopPropagation();
   e.stopImmediatePropagation();
 
+  console.log("Updating pixel ("+$(e.target).attr('x')+", "+$(e.target).attr('y')+")");
+
   // If last pixel placed was greater than 10 seconds ago or no pixel placed
   if(Math.floor(Date.now() / 1000) > (last_pixel + 10) || last_pixel == 0)
   {

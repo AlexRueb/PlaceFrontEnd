@@ -9,14 +9,13 @@ set_time_limit(120);
 $db_user = 'root';
 
 // Get current canvas
-$pdo = new PDO('mysql:host=localhost;dbname=place', $db_user, "");
+$pdo = new PDO('mysql:host=localhost;dbname=place', $db_user, "mysql");
 
 // Corresponds to length of one side of canvas
 $canvas_size = 100;
 
-$pixel_insert_stmt = $pdo->prepare("INSERT INTO `pixels` (`id`, `x`, `y`, `color`, `last_update`) VALUES (:id, :x_val, :y_val, :color, :last_update)");
+$pixel_insert_stmt = $pdo->prepare("INSERT INTO `pixels` (`x`, `y`, `color`, `last_update`) VALUES (:x_val, :y_val, :color, :last_update)");
 
-$count = 0;
 try {
   $pdo->beginTransaction();
   for($i = 0; $i < $canvas_size; $i++)
@@ -24,12 +23,11 @@ try {
     for($j = 0; $j < $canvas_size; $j++)
     {
       $color = random_color();
-      $result = $pixel_insert_stmt->execute(array('id'=>$count, 'x_val'=>$i, 'y_val'=>$j, 'color'=>$color, 'last_update'=>time()));
+      $result = $pixel_insert_stmt->execute(array('x_val'=>$i, 'y_val'=>$j, 'color'=>$color, 'last_update'=>time()));
       if(!$result){
         error_log(print_r($pixel_insert_stmt->errorInfo()));
         echo "<h1>ERROR OCCURED</h1>";
       }
-      $count++;
     }
   }
   $pdo->commit();
