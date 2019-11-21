@@ -34,12 +34,14 @@ body {
 }
 html{
     height: 100%;
+    background-color:black;
 }
 
 #container {
     width: auto;
     height: 100%;
     background-color: black;
+    text-align:center;
 }
 
 main {
@@ -47,8 +49,7 @@ main {
     background-color: black;
     color: white;
     text-align: center;
-    height: 2000px;
-}
+    }
 
 p {
     font-size: 24pt;
