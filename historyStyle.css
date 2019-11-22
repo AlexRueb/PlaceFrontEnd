@@ -43,6 +43,7 @@ html{
     height: 100%;
     background-color: black;
     text-align:center;
+    padding: 2em;
 }
 
 main {
@@ -55,4 +56,5 @@ main {
 
 p {
     font-size: 24pt;
+    max-width: 2000px;
 }

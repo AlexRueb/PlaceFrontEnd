@@ -4,7 +4,7 @@ var last_pixel = 0;
 function updateCanvas(){
   //Update each pixel in canvas with new DB info
   $.get({
-    url: "pixel.php?a=get_canvas&last_update="+last_update,
+    url: "pixel.php?a=get_canvas&last_update="+(last_update - 1),
     dataType: 'json'
   }).done(function(data){
     last_update = Math.floor(Date.now() / 1000);

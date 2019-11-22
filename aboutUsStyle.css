@@ -37,10 +37,21 @@ html{
     background-color:black;
 }
 
+h1 {
+  color: white;
+  text-align: center;
+}
+
 #container {
     width: auto;
     height: 100%;
     background-color:black;
+    padding: 2em;
+}
+
+#container main p{
+  padding: 3em;
+  border-bottom: 1px solid white;
 }
 
 main {
