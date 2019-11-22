@@ -1,3 +1,67 @@
-﻿body
-{
+﻿header {
+    background-color: black;
+    font-size: 1em;
+    padding: 0.5em;
+    color: white;
+    border-bottom: 1px solid white;
+    font-family: FreeMono, monospace;
+}
+
+header span {
+    font-size: 1.5em;
+}
+
+header ul li {
+    display: inline;
+    padding: 1em;
+}
+
+header ul li a {
+    color: white;
+}
+
+header ul li a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 24pt;
+    height: 100%;
+    font-family: FreeMono, monospace;
+}
+html{
+    height: 100%;
+    background-color:black;
+}
+
+#container {
+    width: auto;
+    height: 100%;
+    background-color: black;
+    text-align:center;
+    padding: 2em;
+}
+
+main {
+    margin: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: FreeMono, monospace;
+}
+
+p {
+    margin: 0 auto;
+    font-size: 24pt;
+    max-width: 1000px;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+iframe{
+  padding-bottom: 5em;
 }
