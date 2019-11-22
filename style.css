@@ -99,7 +99,7 @@ body {
 }
 
 nav {
-    min-width: 200px;
+    min-width: 300px;
     text-align: center;
     height: inherit;
     font-size: 12pt;
@@ -108,7 +108,7 @@ nav {
     background-color: #101010;
     color: white;
     border-right: 1px solid white;
-    padding: 1em;
+    padding: 3em;
     padding-bottom: 5%;
 }
 

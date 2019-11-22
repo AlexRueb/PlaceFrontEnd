@@ -79,6 +79,6 @@ $(function(){
   $(".pixelCanvas").addClass("animated fadeIn slow");
 
   // Update canvas every 1 sec
-  setInterval(updateCanvas, 5000);
+  setInterval(updateCanvas, 2500);
   $(".pixel").click(handlePixel);
 });
