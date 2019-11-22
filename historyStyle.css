@@ -55,6 +55,13 @@ main {
 }
 
 p {
+    margin: 0 auto;
     font-size: 24pt;
-    max-width: 2000px;
+    max-width: 1000px;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+iframe{
+  padding-bottom: 5em;
 }
