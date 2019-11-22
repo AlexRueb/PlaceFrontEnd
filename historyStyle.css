@@ -31,6 +31,7 @@ body {
     color: white;
     font-size: 24pt;
     height: 100%;
+    font-family: FreeMono, monospace;
 }
 html{
     height: 100%;
@@ -49,7 +50,8 @@ main {
     background-color: black;
     color: white;
     text-align: center;
-    }
+    font-family: FreeMono, monospace;
+}
 
 p {
     font-size: 24pt;

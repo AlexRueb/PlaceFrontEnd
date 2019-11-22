@@ -44,9 +44,10 @@ body {
     font-size:24pt;
 }
 
-#container{
+#container {
     display: flex;
     background-color: black;
+    font-family: FreeMono, monospace;
     /* Fancy Gradient
      * background: #7d7e7d;
      * background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
@@ -56,7 +57,7 @@ body {
      */
     justify-content: center;
     flex-direction: row;
-    width:auto;
+    width: auto;
     height: 100%;
 }
 

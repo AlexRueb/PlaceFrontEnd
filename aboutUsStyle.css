@@ -28,7 +28,7 @@ header ul li a:hover {
 body {
     width: 100%;
     background-color: black;
-    color:white;
+    color: white;
     font-size: 24pt;
     height: 100%;
 }
@@ -46,8 +46,9 @@ html{
 main {
     margin: auto;
     background-color: rgba(255, 255, 255, 0);
-    color:white;
-    text-align:center;
+    color: white;
+    text-align: center;
+    font-family: FreeMono, monospace;
 }
 
 p {
